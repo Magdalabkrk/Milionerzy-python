@@ -1,3 +1,4 @@
+from results import save_result
 import random
 from config import MONEY_LEVELS
 from game import ask_question
@@ -10,7 +11,9 @@ def main():
 
     current_money = 0
     lifelines = {
-        "50": True
+        "50": True,
+        "audience": True,
+        "phone": True
     }
 
     for index, question in enumerate(questions):
@@ -23,6 +26,7 @@ def main():
 
         if not is_correct:
             print(f"Koniec gry. Wygrywasz: {current_money} zł")
+            save_result(current_money)
             break
 
         current_money = MONEY_LEVELS[index]
@@ -30,6 +34,7 @@ def main():
 
     else:
         print("Gratulacje! Wygrałeś milion złotych!")
+        save_result(current_money)
 
 
 if __name__ == "__main__":
