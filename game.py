@@ -1,20 +1,22 @@
-from config import GAME_TITLE, QUESTIONS_FILE
-from lifelines import Lifelines
-from questions import load_questions
+def ask_question(question: dict) -> bool:
+    print("\n" + question["question"])
 
+    letters = ["A", "B", "C", "D"]
 
-class Game:
-    def __init__(self) -> None:
-        self.title = GAME_TITLE
-        self.questions_file = QUESTIONS_FILE
-        self.lifelines = Lifelines()
+    for index, answer in enumerate(question["answers"]):
+        print(f"{letters[index]}. {answer}")
 
-    def run(self) -> None:
-        print(self.title)
-        questions = load_questions(self.questions_file)
+    user_answer = input("Twoja odpowiedź: ").upper()
 
-        if not questions:
-            print("Brak pytań w pliku data/questions.json.")
-            return
+    if user_answer not in letters:
+        print("Niepoprawna odpowiedź.")
+        return False
 
-        print(f"Załadowano {len(questions)} pytań.")
+    selected_index = letters.index(user_answer)
+
+    if selected_index == question["correct"]:
+        print("Dobrze!")
+        return True
+
+    print("Źle!")
+    return False
