@@ -6,9 +6,12 @@ from questions import load_questions
 
 def main():
     questions = load_questions("data/questions.json")
-    random.shuffle(questions)  # 👈 TUTAJ
+    random.shuffle(questions)
 
     current_money = 0
+    lifelines = {
+        "50": True
+    }
 
     for index, question in enumerate(questions):
         if index >= len(MONEY_LEVELS):
@@ -16,7 +19,7 @@ def main():
 
         print(f"\nPytanie za {MONEY_LEVELS[index]} zł")
 
-        is_correct = ask_question(question)
+        is_correct = ask_question(question, lifelines)
 
         if not is_correct:
             print(f"Koniec gry. Wygrywasz: {current_money} zł")

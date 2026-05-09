@@ -1,11 +1,16 @@
-class Lifelines:
-    def __init__(self) -> None:
-        self.used = set()
+import random
 
-    def use_5050(self) -> str:
-        self.used.add("50:50")
-        return "50:50"
 
-    def ask_audience(self) -> str:
-        self.used.add("publiczność")
-        return "publiczność"
+def fifty_fifty(question: dict) -> list:
+    correct_index = question["correct"]
+
+    wrong_answers = [
+        i for i in range(len(question["answers"]))
+        if i != correct_index
+    ]
+
+    removed = random.sample(wrong_answers, 2)
+    return [
+        i for i in range(len(question["answers"]))
+        if i not in removed
+    ]
