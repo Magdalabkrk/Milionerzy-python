@@ -1,0 +1,12 @@
+[
+  {
+    "question": "Stolica Polski to:",
+    "answers": ["Kraków", "Warszawa", "Gdańsk", "Wrocław"],
+    "correct": 1
+  },
+  {
+    "question": "Ile to 2 + 2?",
+    "answers": ["3", "4", "5", "22"],
+    "correct": 1
+  }
+]
