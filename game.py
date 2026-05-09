@@ -6,11 +6,13 @@ def ask_question(question: dict) -> bool:
     for index, answer in enumerate(question["answers"]):
         print(f"{letters[index]}. {answer}")
 
-    user_answer = input("Twoja odpowiedź: ").upper()
+    while True:  # 👈 TO DODAJEMY
+        user_answer = input("Twoja odpowiedź (A/B/C/D): ").upper()
 
-    if user_answer not in letters:
-        print("Niepoprawna odpowiedź.")
-        return False
+        if user_answer in letters:
+            break
+
+        print("Niepoprawny wybór, spróbuj ponownie.")
 
     selected_index = letters.index(user_answer)
 
@@ -18,5 +20,5 @@ def ask_question(question: dict) -> bool:
         print("Dobrze!")
         return True
 
-    print("Źle!")
+    print(f"Źle! Poprawna odpowiedź to: {letters[question['correct']]}")
     return False

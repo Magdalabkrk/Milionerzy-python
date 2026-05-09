@@ -1,2 +1,14 @@
-GAME_TITLE = "Milionerzy"
-QUESTIONS_FILE = "data/questions.json"
+MONEY_LEVELS = [
+    500,
+    1000,
+    2000,
+    5000,
+    10000,
+    20000,
+    40000,
+    75000,
+    125000,
+    250000,
+    500000,
+    1000000,
+]
