@@ -43,9 +43,11 @@ def ask_question(question: dict, lifelines: dict) -> bool:
                 print("Telefon do przyjaciela już wykorzystany.")
                 continue
 
-            suggested_index = phone_friend(question)
+            message = phone_friend(question)
             lifelines["phone"] = False
-            print(f"\nPrzyjaciel sugeruje odpowiedź: {letters[suggested_index]}")
+
+            print("\nPrzyjaciel mówi:")
+            print(message)
             continue
 
         if user_answer in letters:

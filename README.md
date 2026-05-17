@@ -1,129 +1,124 @@
 🎮 Milionerzy — projekt Python
-📌 Opis projektu
-Projekt przedstawia konsolową implementację gry „Milionerzy” napisaną w języku Python.
-Gracz odpowiada na pytania wielokrotnego wyboru, zdobywając kolejne poziomy wygranej.
 
-Aplikacja została zaprojektowana w sposób modułowy, z podziałem na pliki odpowiadające za konkretne elementy logiki gry.
+📌 Opis projektu
+Projekt przedstawia implementację gry „Milionerzy” napisaną w języku Python. Aplikacja posiada wersję konsolową oraz rozbudowaną wersję graficzną (GUI) stworzoną w Tkinterze. Gracz odpowiada na pytania wielokrotnego wyboru, zdobywając kolejne poziomy wygranej oraz korzystając z kół ratunkowych - podobnie jak w teleturnieju. Projekt został zaprojektowany w sposób modułowy i zgodny z dobrymi praktykami programowania.
 
 ⚙️ Funkcjonalności
+
 🎯 Podstawowa rozgrywka
+
 pytania wczytywane z pliku JSON
 
 4 odpowiedzi (A/B/C/D)
 
 jedna poprawna odpowiedź
 
-sprawdzanie odpowiedzi użytkownika
+walidacja wyboru użytkownika
 
 zakończenie gry po błędzie
 
 💰 System wygranej
-rosnące progi pieniężne (config.py)
 
-aktualna wygrana wyświetlana po każdej poprawnej odpowiedzi
+progi pieniężne zdefiniowane w config.py
 
-zakończenie gry z odpowiednią kwotą
+aktualna wygrana po każdym pytaniu
+
+realistyczna progresja trudności (easy → medium → hard) powiązana z poziomami nagród
 
 🎲 Losowość
-pytania są losowane przy każdym uruchomieniu (random.shuffle)
+
+pytania są tasowane przy każdej grze (random.shuffle)
+
+każda rozgrywka wygląda inaczej
 
 🛟 Koła ratunkowe
-Zaimplementowane trzy koła:
 
-1. 50/50
-usuwa dwie błędne odpowiedzi
+50/50 - usuwa dwie błędne odpowiedzi (random.sample)
 
-wykorzystuje random.sample()
+Publiczność - generuje procentowy rozkład odpowiedzi (największa szansa dla poprawnej)
 
-2. Publiczność
-generuje procentowe rozkłady odpowiedzi
-
-poprawna odpowiedź ma największe prawdopodobieństwo
-
-3. Telefon do przyjaciela
-symuluje podpowiedź
-
-~75% szans na poprawną odpowiedź
+Telefon do przyjaciela - symulacja rozmowy: poprawna odpowiedź, sugestia, błędna odpowiedź z niepewnością lub brak wiedzy
 
 💾 Zapisywanie wyników
-wyniki zapisywane są w pliku data/results.json
 
-każdy wynik to zapis końcowej wygranej
+wyniki zapisywane w pliku data/results.json
 
-wykorzystano moduły json oraz pathlib
+każdy wynik to końcowa wygrana
+
+wykorzystano moduły json i pathlib
+
+🖥️ Interfejs graficzny (GUI)
+
+zbudowany przy użyciu Tkinter
+
+nowoczesny ciemny motyw (kolory teleturniejowe)
+
+przyciski odpowiedzi i kół ratunkowych
+
+aktualna wygrana i pasek postępu (np. „Pytanie 3/12”)
+
+dynamiczne komunikaty dla użytkownika
+
+🎨 Ulepszenia wizualne
+
+kolorowanie odpowiedzi: zielony (poprawna), czerwony (błędna)
+
+opóźnienie 1 sekundy przed kolejnym pytaniem
+
+spójny styl graficzny (ciemne tło + złote elementy)
+
+🔁 Restart gry
+
+przycisk „Zagraj od nowa”
+
+reset pytań, wygranej i kół ratunkowych
+
+📊 Historia wyników
+
+przycisk „Historia wyników”
+
+wyświetla ostatnie 5 wyników gracza
 
 🧱 Struktura projektu
 milionerzy-python/
-│
-├── main.py         # główna logika gry
-├── game.py         # obsługa pojedynczego pytania
-├── questions.py    # wczytywanie pytań z JSON
-├── lifelines.py    # koła ratunkowe
-├── results.py      # zapis wyników
-├── config.py       # progi wygranej
-│
+├── main.py # wersja konsolowa
+├── gui.py # wersja graficzna (Tkinter)
+├── game.py # logika pytania
+├── questions.py # wczytywanie pytań
+├── lifelines.py # koła ratunkowe
+├── results.py # zapis wyników
+├── config.py # progi wygranej
 ├── data/
-│   ├── questions.json
-│   └── results.json
-🧠 Wykorzystane elementy Pythona (zgodne z materiałami)
-Projekt wykorzystuje zagadnienia omawiane na zajęciach:
+│ ├── questions.json
+│ └── results.json
 
-K2 — instrukcje warunkowe
-if / elif / else
+🧠 Wykorzystane elementy Pythona
 
-walidacja danych użytkownika
+instrukcje warunkowe (if / elif / else)
 
-logika gry
+pętle (for, while, break, continue, enumerate)
 
-K3 — pętle
-for, while
+funkcje i modularność
 
-break, continue
+biblioteki standardowe: random, json, pathlib
 
-enumerate()
-
-K4 — funkcje
-podział na małe funkcje
-
-przekazywanie argumentów
-
-zwracanie wartości
-
-K5 — moduły i biblioteka standardowa
-import
-
-random
-
-json
-
-pathlib
-
-podział projektu na pliki
+GUI: tkinter (obsługa zdarzeń i interfejsu)
 
 ▶️ Jak uruchomić
-python main.py
-🚀 Co planujemy dalej
-Możliwe rozszerzenia projektu:
+wersja konsolowa: python main.py
+wersja graficzna: python gui.py
 
-📊 wyświetlanie historii wyników
+🚀 Możliwe rozszerzenia
 
-🎨 poprawa wyglądu (kolory w terminalu)
+dźwięki
 
-🖥️ wersja GUI (np. Tkinter)
+animacje
 
-🔊 dodanie dźwięków
+statystyki gracza
 
-📈 statystyki gracza
+profile użytkowników
 
-💡 Sugestie (na + do zaliczenia)
-Możecie jeszcze podbić ocenę:
+wersja webowa
 
-dodać komentarze/docstringi do funkcji
-
-zrobić README po angielsku (opcjonalnie)
-
-pokazać przykładową sesję gry
-
-dodać walidację pliku JSON
-
-użyć type hints (już częściowo macie 👍)
+🏁 Podsumowanie
+Projekt stanowi kompletną implementację gry „Milionerzy” z logiką gry, systemem nagród, kołami ratunkowymi, zapisem wyników oraz interfejsem graficznym i jest gotowy do prezentacji jako rozbudowany projekt zaliczeniowy.

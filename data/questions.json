@@ -1,12 +1,106 @@
-[
-  {
-    "question": "Stolica Polski to:",
-    "answers": ["Kraków", "Warszawa", "Gdańsk", "Wrocław"],
-    "correct": 1
-  },
-  {
-    "question": "Ile to 2 + 2?",
-    "answers": ["3", "4", "5", "22"],
-    "correct": 1
-  }
-]
+{
+  "easy": [
+    {"question":"Stolica Polski to:","answers":["Kraków","Warszawa","Gdańsk","Poznań"],"correct":1},
+    {"question":"Ile wynosi 6 × 7?","answers":["36","42","48","40"],"correct":1},
+    {"question":"Która planeta jest najbliżej Słońca?","answers":["Wenus","Merkury","Mars","Jowisz"],"correct":1},
+    {"question":"Ile minut ma godzina?","answers":["30","45","60","90"],"correct":2},
+    {"question":"Który kolor powstaje z niebieskiego i żółtego?","answers":["Zielony","Fioletowy","Czerwony","Pomarańczowy"],"correct":0},
+    {"question":"Które zwierzę jest ssakiem?","answers":["Rekin","Delfin","Żaba","Krokodyl"],"correct":1},
+    {"question":"Ile dni ma rok przestępny?","answers":["365","366","364","360"],"correct":1},
+    {"question":"Który instrument ma klawisze?","answers":["Gitara","Fortepian","Trąbka","Skrzypce"],"correct":1},
+    {"question":"Która rzeka przepływa przez Warszawę?","answers":["Odra","Wisła","Warta","Bug"],"correct":1},
+    {"question":"Ile wynosi 10 + 15?","answers":["20","25","30","35"],"correct":1},
+
+    {"question":"Który kontynent jest najmniejszy?","answers":["Europa","Australia","Afryka","Azja"],"correct":1},
+    {"question":"Który kraj ma kształt buta?","answers":["Hiszpania","Włochy","Grecja","Portugalia"],"correct":1},
+    {"question":"Ile boków ma trójkąt?","answers":["2","3","4","5"],"correct":1},
+    {"question":"Który miesiąc ma 28 dni?","answers":["Luty","Styczeń","Marzec","Każdy"],"correct":3},
+    {"question":"Ile to 9 × 9?","answers":["72","81","99","90"],"correct":1},
+    {"question":"Która planeta nazywana jest Czerwoną Planetą?","answers":["Mars","Wenus","Jowisz","Saturn"],"correct":0},
+    {"question":"Który organ pompuje krew?","answers":["Płuca","Serce","Mózg","Wątroba"],"correct":1},
+    {"question":"Ile wynosi 100 / 10?","answers":["5","10","15","20"],"correct":1},
+    {"question":"Który język jest używany w Polsce?","answers":["Niemiecki","Polski","Czeski","Rosyjski"],"correct":1},
+    {"question":"Ile to 3 × 5?","answers":["10","15","20","25"],"correct":1},
+
+    {"question":"Który dzień jest po niedzieli?","answers":["Sobota","Poniedziałek","Wtorek","Piątek"],"correct":1},
+    {"question":"Która liczba jest parzysta?","answers":["11","13","16","19"],"correct":2},
+    {"question":"Który ocean jest największy?","answers":["Atlantycki","Indyjski","Spokojny","Arktyczny"],"correct":2},
+    {"question":"Ile centymetrów ma metr?","answers":["10","100","1000","10000"],"correct":1},
+    {"question":"Który kolor ma trawa?","answers":["Czerwony","Zielony","Niebieski","Żółty"],"correct":1},
+    {"question":"Który znak oznacza dodawanie?","answers":["-","+","*","/"],"correct":1},
+    {"question":"Ile wynosi 20 + 30?","answers":["40","50","60","70"],"correct":1},
+    {"question":"Która liczba jest większa?","answers":["5","10","3","1"],"correct":1},
+    {"question":"Ile nóg ma pies?","answers":["2","4","6","8"],"correct":1},
+    {"question":"Który owoc jest czerwony?","answers":["Banan","Jabłko","Gruszka","Kiwi"],"correct":1}
+  ],
+
+  "medium": [
+    {"question":"Która struktura danych w Pythonie przechowuje pary klucz-wartość?","answers":["list","tuple","dict","set"],"correct":2},
+    {"question":"Który pierwiastek ma symbol Fe?","answers":["Fluor","Żelazo","Fosfor","Franc"],"correct":1},
+    {"question":"Która funkcja w Pythonie zwraca długość obiektu?","answers":["len()","type()","range()","print()"],"correct":0},
+    {"question":"Który kraj ma największą powierzchnię?","answers":["USA","Chiny","Kanada","Rosja"],"correct":3},
+    {"question":"Która planeta ma pierścienie?","answers":["Mars","Saturn","Ziemia","Merkury"],"correct":1},
+    {"question":"Który język programowania jest interpretowany?","answers":["C++","Python","C","Assembler"],"correct":1},
+    {"question":"Która liczba jest pierwsza?","answers":["15","21","29","35"],"correct":2},
+    {"question":"Który protokół służy do stron WWW?","answers":["FTP","HTTP","SMTP","SSH"],"correct":1},
+    {"question":"Ile wynosi 12 × 12?","answers":["124","144","132","156"],"correct":1},
+    {"question":"Który kontynent jest największy?","answers":["Afryka","Azja","Europa","Ameryka"],"correct":1},
+     {"question":"Która funkcja w Pythonie zamienia tekst na liczbę całkowitą?","answers":["str()","int()","float()","input()"],"correct":1},
+    {"question":"Który pierwiastek ma symbol Na?","answers":["Sód","Azot","Nikiel","Neon"],"correct":0},
+    {"question":"Które państwo ma najwięcej ludności?","answers":["USA","Indie","Chiny","Rosja"],"correct":1},
+    {"question":"Ile wynosi pierwiastek z 144?","answers":["10","11","12","13"],"correct":2},
+    {"question":"Która struktura w Pythonie jest niemutowalna?","answers":["list","dict","tuple","set"],"correct":2},
+    {"question":"Która wojna zakończyła się w 1945 roku?","answers":["I wojna światowa","II wojna światowa","Zimna wojna","Wojna secesyjna"],"correct":1},
+    {"question":"Która planeta jest największa?","answers":["Ziemia","Mars","Jowisz","Wenus"],"correct":2},
+    {"question":"Który język używany jest w Brazylii?","answers":["Hiszpański","Portugalski","Francuski","Angielski"],"correct":1},
+    {"question":"Która funkcja łączy listy elementów w pary?","answers":["map()","zip()","filter()","list()"],"correct":1},
+    {"question":"Ile wynosi 2^5?","answers":["16","32","64","128"],"correct":1},
+
+    {"question":"Który kraj graniczy z Polską od zachodu?","answers":["Czechy","Niemcy","Słowacja","Ukraina"],"correct":1},
+    {"question":"Który metal jest cieczą w temp. pokojowej?","answers":["Żelazo","Rtęć","Miedź","Aluminium"],"correct":1},
+    {"question":"Który moduł w Pythonie obsługuje JSON?","answers":["math","json","sys","os"],"correct":1},
+    {"question":"Który skrót oznacza pamięć operacyjną?","answers":["CPU","GPU","RAM","ROM"],"correct":2},
+    {"question":"Która funkcja pobiera dane od użytkownika?","answers":["print()","input()","len()","int()"],"correct":1},
+    {"question":"Która liczba NIE jest pierwsza?","answers":["11","13","15","17"],"correct":2},
+    {"question":"Który protokół służy do wysyłania maili?","answers":["HTTP","FTP","SMTP","SSH"],"correct":2},
+    {"question":"Który kontynent ma najwięcej krajów?","answers":["Europa","Afryka","Azja","Ameryka"],"correct":1},
+    {"question":"Która planeta ma najwięcej księżyców?","answers":["Mars","Ziemia","Saturn","Wenus"],"correct":2},
+    {"question":"Które polecenie w Git zapisuje zmiany?","answers":["git push","git commit","git add","git clone"],"correct":1},
+
+    {"question":"Które równanie opisuje energię?","answers":["F=ma","E=mc^2","a^2+b^2=c^2","pV=nRT"],"correct":1},
+    {"question":"Który kraj ma stolicę w Tokio?","answers":["Chiny","Korea","Japonia","Wietnam"],"correct":2},
+    {"question":"Która funkcja zamienia tekst na float?","answers":["int()","str()","float()","len()"],"correct":2},
+    {"question":"Który ocean leży między Ameryką a Europą?","answers":["Spokojny","Atlantycki","Indyjski","Arktyczny"],"correct":1},
+    {"question":"Który język NIE jest kompilowany?","answers":["C","C++","Python","Rust"],"correct":2},
+    {"question":"Która planeta ma dzień dłuższy niż rok?","answers":["Mars","Merkury","Wenus","Ziemia"],"correct":2},
+    {"question":"Która funkcja kończy pętlę?","answers":["continue","stop","break","exit"],"correct":2},
+    {"question":"Który typ danych przechowuje wartości True/False?","answers":["int","str","bool","list"],"correct":2},
+    {"question":"Która liczba jest kwadratem 11?","answers":["111","121","131","141"],"correct":1},
+    {"question":"Który kraj wygrał mundial 2018?","answers":["Niemcy","Francja","Brazylia","Argentyna"],"correct":1}
+  ],
+
+  "hard": [
+    {"question":"Która metoda w Pythonie kopiuje listę?","answers":["copy()","clone()","duplicate()","list()"],"correct":0},
+    {"question":"Która planeta ma najkrótszy rok?","answers":["Mars","Merkury","Wenus","Ziemia"],"correct":1},
+    {"question":"Która funkcja zwraca iterator?","answers":["list()","range()","len()","sum()"],"correct":1},
+    {"question":"Który pierwiastek ma liczbę atomową 1?","answers":["Hel","Wodór","Tlen","Azot"],"correct":1},
+    {"question":"Który język ma garbage collector?","answers":["C","C++","Python","Assembly"],"correct":2},
+    {"question":"Które państwo NIE ma dostępu do morza?","answers":["Polska","Węgry","Hiszpania","Włochy"],"correct":1},
+    {"question":"Która funkcja filtruje elementy listy?","answers":["map()","filter()","reduce()","zip()"],"correct":1},
+    {"question":"Który typ danych nie zachowuje kolejności?","answers":["list","tuple","dict","set"],"correct":3},
+    {"question":"Która planeta jest najdalsza od Słońca?","answers":["Neptun","Uran","Saturn","Jowisz"],"correct":0},
+    {"question":"Która operacja ma najwyższy priorytet?","answers":["+","-","*","/"],"correct":2},
+
+    {"question":"Który algorytm sortowania jest najszybszy średnio?","answers":["Bubble","QuickSort","Insertion","Selection"],"correct":1},
+    {"question":"Który protokół jest bezpieczną wersją HTTP?","answers":["FTP","HTTPS","SMTP","SSH"],"correct":1},
+    {"question":"Który język używa JVM?","answers":["Python","Java","C","Go"],"correct":1},
+    {"question":"Która funkcja sumuje elementy listy?","answers":["sum()","add()","total()","count()"],"correct":0},
+    {"question":"Która liczba jest wynikiem 2^10?","answers":["512","1024","2048","4096"],"correct":1},
+    {"question":"Który kontynent jest najzimniejszy?","answers":["Europa","Azja","Antarktyda","Ameryka"],"correct":2},
+    {"question":"Który gaz jest najlżejszy?","answers":["Tlen","Wodór","Hel","Azot"],"correct":1},
+    {"question":"Który język używa indentacji zamiast nawiasów?","answers":["C++","Java","Python","C#"],"correct":2},
+    {"question":"Która struktura ma unikalne elementy?","answers":["list","tuple","set","dict"],"correct":2},
+    {"question":"Która planeta obraca się najwolniej?","answers":["Mars","Wenus","Ziemia","Merkury"],"correct":1}
+
+  ]
+}

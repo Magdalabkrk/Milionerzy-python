@@ -6,8 +6,21 @@ from questions import load_questions
 
 
 def main():
-    questions = load_questions("data/questions.json")
-    random.shuffle(questions)
+    questions_data = load_questions("data/questions.json")
+
+    easy = questions_data["easy"]
+    medium = questions_data["medium"]
+    hard = questions_data["hard"]
+
+    random.shuffle(easy)
+    random.shuffle(medium)
+    random.shuffle(hard)
+
+    questions = (
+        easy[:4] +
+        medium[:4] +
+        hard[:4]
+    )
 
     current_money = 0
     lifelines = {

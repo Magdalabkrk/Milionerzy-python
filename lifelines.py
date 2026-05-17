@@ -34,16 +34,28 @@ def audience_help(question: dict) -> dict:
 
     return {i: percentages[i] for i in range(4)}
 
-def phone_friend(question: dict) -> int:
-    correct = question["correct"]
-    answers_count = len(question["answers"])
+def phone_friend(question: dict) -> str:
+    options = ["correct", "guide", "wrong_uncertain", "unknown"]
 
-    if random.randint(1, 100) <= 75:
-        return correct
+    chosen = random.choices(
+        options,
+        weights=[45, 30, 15, 10],
+        k=1
+    )[0]
 
-    wrong_answers = [
-        i for i in range(answers_count)
-        if i != correct
-    ]
+    correct_answer = question["answers"][question["correct"]]
 
-    return random.choice(wrong_answers)
+    if chosen == "correct":
+        return f"Hmm... wydaje mi się, że poprawna odpowiedź to: {correct_answer}."
+
+    if chosen == "guide":
+        return "Nie dam głowy, ale spróbuj odrzucić najbardziej absurdalne odpowiedzi i pomyśl logicznie."
+
+    if chosen == "wrong_uncertain":
+        wrong_answers = [
+            answer for index, answer in enumerate(question["answers"])
+            if index != question["correct"]
+        ]
+        return f"Nie jestem pewien, ale chyba wybrałbym: {random.choice(wrong_answers)}."
+
+    return "Kurczę, tego kompletnie nie wiem. Nie chcę Cię wprowadzić w błąd."
