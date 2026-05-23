@@ -1,124 +1,79 @@
-🎮 Milionerzy — projekt Python
+Milionerzy — projekt w Pythonie
 
-📌 Opis projektu
-Projekt przedstawia implementację gry „Milionerzy” napisaną w języku Python. Aplikacja posiada wersję konsolową oraz rozbudowaną wersję graficzną (GUI) stworzoną w Tkinterze. Gracz odpowiada na pytania wielokrotnego wyboru, zdobywając kolejne poziomy wygranej oraz korzystając z kół ratunkowych - podobnie jak w teleturnieju. Projekt został zaprojektowany w sposób modułowy i zgodny z dobrymi praktykami programowania.
+**Opis projektu**
+To prosta i przyjemna implementacja gry "Milionerzy" w Pythonie. Są dwie wersje: konsolowa i graficzna (Tkinter). Wiesz — odpowiadasz na pytania wielokrotnego wyboru, zdobywasz kolejne progi wygranej i możesz używać kół ratunkowych, tak jak w teleturnieju. Projekt jest podzielony na moduły i napisany z myślą o przejrzystości.
 
-⚙️ Funkcjonalności
+**Funkcjonalności**
 
-🎯 Podstawowa rozgrywka
+**Podstawowa rozgrywka**
+- Pytania wczytywane z pliku JSON
+- Cztery odpowiedzi (A/B/C/D)
+- Jedna poprawna odpowiedź
+- Sprawdzenie poprawności odpowiedzi
+- Gra kończy się po pomyłce
 
-pytania wczytywane z pliku JSON
+**System wygranej**
+- Progi nagród w `config.py`
+- Wygrana aktualizowana po każdym pytaniu
+- Trudność rośnie stopniowo (łatwe → średnie → trudne)
 
-4 odpowiedzi (A/B/C/D)
+**Losowość**
+- Pytania tasowane przy każdej grze (`random.shuffle`)
+- Dzięki temu każda rozgrywka jest trochę inna
 
-jedna poprawna odpowiedź
+**Koła ratunkowe**
+- 50/50 — usuwa dwie błędne odpowiedzi
+- Publiczność — generuje procentowy rozkład odpowiedzi (najbardziej prawdopodobna jest poprawna)
+- Telefon do przyjaciela — symulowana podpowiedź (może trafić, może być niepewna)
 
-walidacja wyboru użytkownika
+**Zapisywanie wyników**
+- Wyniki zapisywane do `data/results.json`
+- Każdy wpis to końcowa wygrana gracza
+- Do zapisu użyto `json` i `pathlib`
 
-zakończenie gry po błędzie
+**Interfejs graficzny (GUI)**
+- Zrobione w Tkinter
+- Ciemny, stonowany motyw z akcentami
+- Przyciski odpowiedzi, koła ratunkowe i pasek postępu (np. "Pytanie 3/12")
+- Komunikaty dla gracza dostosowujące się do sytuacji
 
-💰 System wygranej
+**Ulepszenia wizualne**
+- Kolory: zielony = poprawna odpowiedź, czerwony = błędna
+- Krótkie opóźnienie przed przejściem dalej, żeby wszystko było czytelne
+- Spójny wygląd aplikacji
 
-progi pieniężne zdefiniowane w config.py
+**Restart gry**
+- Przycisk "Zagraj od nowa" resetuje stan gry i koła ratunkowe
 
-aktualna wygrana po każdym pytaniu
+**Historia wyników**
+- Możliwość podglądu ostatnich wyników (na przykład 5 ostatnich)
 
-realistyczna progresja trudności (easy → medium → hard) powiązana z poziomami nagród
+**Struktura projektu**
 
-🎲 Losowość
-
-pytania są tasowane przy każdej grze (random.shuffle)
-
-każda rozgrywka wygląda inaczej
-
-🛟 Koła ratunkowe
-
-50/50 - usuwa dwie błędne odpowiedzi (random.sample)
-
-Publiczność - generuje procentowy rozkład odpowiedzi (największa szansa dla poprawnej)
-
-Telefon do przyjaciela - symulacja rozmowy: poprawna odpowiedź, sugestia, błędna odpowiedź z niepewnością lub brak wiedzy
-
-💾 Zapisywanie wyników
-
-wyniki zapisywane w pliku data/results.json
-
-każdy wynik to końcowa wygrana
-
-wykorzystano moduły json i pathlib
-
-🖥️ Interfejs graficzny (GUI)
-
-zbudowany przy użyciu Tkinter
-
-nowoczesny ciemny motyw (kolory teleturniejowe)
-
-przyciski odpowiedzi i kół ratunkowych
-
-aktualna wygrana i pasek postępu (np. „Pytanie 3/12”)
-
-dynamiczne komunikaty dla użytkownika
-
-🎨 Ulepszenia wizualne
-
-kolorowanie odpowiedzi: zielony (poprawna), czerwony (błędna)
-
-opóźnienie 1 sekundy przed kolejnym pytaniem
-
-spójny styl graficzny (ciemne tło + złote elementy)
-
-🔁 Restart gry
-
-przycisk „Zagraj od nowa”
-
-reset pytań, wygranej i kół ratunkowych
-
-📊 Historia wyników
-
-przycisk „Historia wyników”
-
-wyświetla ostatnie 5 wyników gracza
-
-🧱 Struktura projektu
+```
 milionerzy-python/
-├── main.py # wersja konsolowa
-├── gui.py # wersja graficzna (Tkinter)
-├── game.py # logika pytania
-├── questions.py # wczytywanie pytań
-├── lifelines.py # koła ratunkowe
-├── results.py # zapis wyników
-├── config.py # progi wygranej
-├── data/
-│ ├── questions.json
-│ └── results.json
+├── main.py           # wersja konsolowa
+├── gui.py            # wersja graficzna (Tkinter)
+├── game.py           # logika gry
+├── questions.py      # wczytywanie pytań
+├── lifelines.py      # koła ratunkowe
+├── results.py        # zapis wyników
+├── config.py         # progi wygranej
+└── data/
+    ├── questions.json
+    └── results.json
+```
 
-🧠 Wykorzystane elementy Pythona
+**Wykorzystane elementy Pythona**
+- Instrukcje warunkowe (`if` / `elif` / `else`)
+- Pętle (`for`, `while`) i `enumerate`
+- Funkcje i moduły
+- Biblioteki standardowe: `random`, `json`, `pathlib`
+- GUI: `tkinter`
 
-instrukcje warunkowe (if / elif / else)
+**Jak uruchomić**
+- Wersja konsolowa: `python main.py`
+- Wersja graficzna: `python gui.py`
 
-pętle (for, while, break, continue, enumerate)
 
-funkcje i modularność
 
-biblioteki standardowe: random, json, pathlib
-
-GUI: tkinter (obsługa zdarzeń i interfejsu)
-
-▶️ Jak uruchomić
-wersja konsolowa: python main.py
-wersja graficzna: python gui.py
-
-🚀 Możliwe rozszerzenia
-
-dźwięki
-
-animacje
-
-statystyki gracza
-
-profile użytkowników
-
-wersja webowa
-
-🏁 Podsumowanie
-Projekt stanowi kompletną implementację gry „Milionerzy” z logiką gry, systemem nagród, kołami ratunkowymi, zapisem wyników oraz interfejsem graficznym i jest gotowy do prezentacji jako rozbudowany projekt zaliczeniowy.
