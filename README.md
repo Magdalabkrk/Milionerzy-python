@@ -1,7 +1,7 @@
 Milionerzy — projekt w Pythonie
 
 **Opis projektu**
-To prosta i przyjemna implementacja gry "Milionerzy" w Pythonie. Są dwie wersje: konsolowa i graficzna (Tkinter). Wiesz — odpowiadasz na pytania wielokrotnego wyboru, zdobywasz kolejne progi wygranej i możesz używać kół ratunkowych, tak jak w teleturnieju. Projekt jest podzielony na moduły i napisany z myślą o przejrzystości.
+Implementacja gry "Milionerzy" w Pythonie. Są dwie wersje: konsolowa i graficzna (Tkinter). Wiesz — odpowiadasz na pytania wielokrotnego wyboru, zdobywasz kolejne progi wygranej i możesz używać kół ratunkowych, tak jak w teleturnieju. Projekt jest podzielony na moduły i napisany z myślą o przejrzystości.
 
 **Funkcjonalności**
 
