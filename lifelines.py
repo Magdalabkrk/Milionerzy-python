@@ -2,6 +2,7 @@ import random
 
 
 def fifty_fifty(question: dict) -> list:
+    # Zwracamy listę indeksów odpowiedzi, które pozostają po usunięciu dwóch błędnych.
     correct_index = question["correct"]
 
     wrong_answers = [
@@ -9,6 +10,7 @@ def fifty_fifty(question: dict) -> list:
         if i != correct_index
     ]
 
+    # Losowo wybieramy dwie odpowiedzi do usunięcia
     removed = random.sample(wrong_answers, 2)
     return [
         i for i in range(len(question["answers"]))
@@ -16,12 +18,15 @@ def fifty_fifty(question: dict) -> list:
     ]
     
 def audience_help(question: dict) -> dict:
+    # Symulacja głosowania publiczności — zwraca procenty dla każdej opcji
     correct = question["correct"]
 
     percentages = [0, 0, 0, 0]
 
     remaining = 100
 
+    # Przydzielamy losowe wartości do odpowiedzi błędnych, a na końcu resztę
+    # zostawiamy dla poprawnej odpowiedzi (dzięki temu poprawna ma największy udział)
     for i in range(4):
         if i == correct:
             continue
@@ -32,9 +37,11 @@ def audience_help(question: dict) -> dict:
 
     percentages[correct] = remaining
 
+    # Zwracamy w formie słownika {index: percent}
     return {i: percentages[i] for i in range(4)}
 
 def phone_friend(question: dict) -> str:
+    # Symulacja telefonu do przyjaciela — czasem pewna odpowiedź, czasem wskazówka
     options = ["correct", "guide", "wrong_uncertain", "unknown"]
 
     chosen = random.choices(
