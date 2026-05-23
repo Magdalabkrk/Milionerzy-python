@@ -33,17 +33,17 @@ def main():
         if index >= len(MONEY_LEVELS):
             break
 
-        print(f"\nPytanie za {MONEY_LEVELS[index]} zł")
-
+        print(f"\nPytanie za {MONEY_LEVELS[index]:,} zł".replace(",", " "))
+        
         is_correct = ask_question(question, lifelines)
 
         if not is_correct:
-            print(f"Koniec gry. Wygrywasz: {current_money} zł")
+            print(f"Koniec gry. Wygrywasz: {current_money:,} zł".replace(",", " "))
             save_result(current_money)
             break
 
         current_money = MONEY_LEVELS[index]
-        print(f"Aktualna wygrana: {current_money} zł")
+        print(f"Aktualna wygrana: {current_money:,} zł".replace(",", " "))
 
     else:
         print("Gratulacje! Wygrałeś milion złotych!")
